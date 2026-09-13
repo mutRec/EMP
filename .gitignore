@@ -1,0 +1,19 @@
+# Dependències de Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Variables d'entorn (MAI pujar el .env real!)
+.env
+.env.local
+.env.production
+
+# Docker
+postgres_data/
+
+# Sistema operatiu i editors
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
