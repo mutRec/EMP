@@ -232,8 +232,10 @@ p {
   font-size: 1.2rem;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   letter-spacing: 0.06em;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18); /* ombra suau */
-  border-radius: 4px; /* opcional, pots posar 0 per quadrat pur */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  /* ombra suau */
+  border-radius: 4px;
+  /* opcional, pots posar 0 per quadrat pur */
 }
 
 /* Text horitzontal “Escola de Música del Palau” */
@@ -242,7 +244,8 @@ p {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 600;
   font-size: 1.65rem;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.12); /* ombra molt suau */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  /* ombra molt suau */
 }
 
 .brand small {
@@ -669,6 +672,7 @@ textarea {
   color: var(--color-ink);
   background: #fff;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  outline: none;
 }
 
 input:focus,
@@ -677,6 +681,14 @@ textarea:focus {
   outline: none;
   border-color: var(--color-accent);
   box-shadow: 0 0 0 3px rgba(217, 125, 61, 0.15);
+}
+
+select:focus-visible {
+  outline: none;
+}
+
+select:hover {
+  border-color: var(--color-accent);
 }
 
 textarea {
@@ -1484,6 +1496,7 @@ select.estat-select {
   .brand-logo {
     height: 32px;
   }
+
   .brand span {
     font-size: 0.95rem;
   }
