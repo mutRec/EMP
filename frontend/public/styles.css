@@ -119,7 +119,7 @@ p {
   justify-content: center;
   gap: 8px;
   padding: 13px 26px;
-  border-radius: 999px;
+  border-radius: var(--radius);
   font-weight: 600;
   font-size: 0.96rem;
   cursor: pointer;
@@ -263,7 +263,7 @@ p {
 
 .nav-links a {
   padding: 8px 14px;
-  border-radius: 999px;
+  border-radius: var(--radius-lg);
   font-size: 0.92rem;
   font-weight: 500;
   color: var(--color-ink);
