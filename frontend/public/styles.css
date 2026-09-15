@@ -146,9 +146,10 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(250, 247, 242, 0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--color-border);
+  background: linear-gradient(135deg, rgba(31, 58, 61, 0.88), rgba(22, 41, 43, 0.92));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .nav {
@@ -164,9 +165,10 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
   align-items: center;
   gap: 0.6rem;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
-/* Quadrat EMP — REDUÏT */
+/* Quadrat EMP */
 .brand-logo-text {
   display: inline-flex;
   align-items: center;
@@ -183,13 +185,13 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
   border-radius: 4px;
 }
 
-/* Text "Escola de Música del Palau" — AMPLIAT */
+/* Text "Escola de Musica del Palau" */
 .brand-name {
-  color: var(--color-accent);
+  color: #fff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 600;
   font-size: 1.85rem;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   line-height: 1.1;
 }
 
@@ -207,7 +209,7 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
   font-weight: 500;
   font-size: 0.65rem;
   letter-spacing: 0.08em;
-  color: var(--color-ink-soft);
+  color: rgba(255, 255, 255, 0.6);
   text-transform: uppercase;
 }
 
@@ -215,7 +217,9 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 .nav-links a {
@@ -223,19 +227,21 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
   border-radius: var(--radius-lg);
   font-size: 0.92rem;
   font-weight: 500;
-  color: var(--color-ink);
+  color: var(--color-accent);
+  white-space: nowrap;
   transition: background 0.15s ease, color 0.15s ease;
 }
 
 .nav-links a:hover {
-  background: var(--color-primary-soft);
-  color: var(--color-primary);
+  background: rgba(217, 125, 61, 0.18);
+  color: #fff;
 }
 
 .nav-links a.cta {
   background: var(--color-accent);
   color: #fff;
-  margin-left: 6px;
+  margin-left: 4px;
+  font-weight: 600;
 }
 .nav-links a.cta:hover { background: var(--color-accent-dark); }
 
@@ -246,14 +252,14 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
   border: none;
   cursor: pointer;
   padding: 6px;
-  z-index: 60;
+  z-index: 102;
 }
 
 .nav-toggle span {
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--color-primary);
+  background: #fff;
   margin: 5px 0;
   transition: 0.2s;
 }
@@ -266,7 +272,7 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
-  z-index: 55;
+  z-index: 100;
 }
 
 .nav-overlay.show {
@@ -274,7 +280,21 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
   pointer-events: auto;
 }
 
+/* Tauleta — marca mes compacta, links mes estrets */
+@media (max-width: 1060px) {
+  .brand-name { font-size: 1.4rem; }
+  .nav-links { gap: 2px; }
+  .nav-links a { padding: 8px 10px; font-size: 0.85rem; }
+}
+
 @media (max-width: 860px) {
+  .site-header {
+    position: relative;
+    z-index: auto;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
   .nav-toggle { display: block; }
 
   .nav-links {
@@ -282,20 +302,27 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
     top: 0;
     left: 0;
     bottom: 0;
-    width: 78%;
-    max-width: 320px;
+    width: 85%;
+    max-width: 350px;
     background: var(--color-bg-alt);
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 24px 40px;
-    gap: 6px;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 90px 28px 60px;
+    gap: 4px;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     box-shadow: var(--shadow-lg);
-    z-index: 56;
+    z-index: 101;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) transparent;
   }
+
+  .nav-links::-webkit-scrollbar { width: 4px; }
+  .nav-links::-webkit-scrollbar-track { background: transparent; }
+  .nav-links::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 4px; }
 
   .nav-links.open {
     transform: translateX(0);
@@ -303,15 +330,21 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
 
   .nav-links a {
     width: 100%;
-    text-align: center;
+    text-align: left;
     padding: 14px 18px;
     font-size: 1.05rem;
     border-radius: var(--radius);
+    color: var(--color-ink);
+  }
+
+  .nav-links a:hover {
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
   }
 
   .nav-links a.cta {
     margin-left: 0;
-    margin-top: 10px;
+    margin-top: 0;
   }
 }
 
@@ -703,21 +736,21 @@ textarea { resize: vertical; min-height: 80px; }
    RESPONSIVE GENERAL — ajustos mòbil
    ========================================================================== */
 
-/* 🔧 Header en mòbil: EMP petit + Escola més gran */
+/* 🔧 Header en mòbil: Logo maximitzat */
 @media (max-width: 600px) {
   .brand-logo-text {
-    width: 36px;
-    height: 36px;
-    font-size: 0.7rem;
+    width: 52px;
+    height: 52px;
+    font-size: 1.05rem;
   }
 
   .brand-name {
-    font-size: 1.15rem;
+    font-size: 1.5rem;
     line-height: 1.15;
   }
 
   .brand {
-    gap: 0.5rem;
+    gap: 0.7rem;
   }
 }
 

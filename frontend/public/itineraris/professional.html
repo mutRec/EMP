@@ -13,6 +13,7 @@
 <body>
 
   <header class="site-header">
+    <div class="nav-overlay" id="navOverlay"></div>
     <nav class="nav wrap">
       <a href="/index.html" class="brand">
         <span class="brand-logo-text">EMP</span>
@@ -129,11 +130,23 @@
   <script>
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
+    const navOverlay = document.getElementById('navOverlay');
+
+    function toggleMenu(open) {
+      const isOpen = open !== undefined ? open : !navLinks.classList.contains('open');
+      navLinks.classList.toggle('open', isOpen);
+      if (navOverlay) navOverlay.classList.toggle('show', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
     if (navToggle && navLinks) {
-      navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+      navToggle.addEventListener('click', () => toggleMenu());
       navLinks.querySelectorAll('a').forEach(a =>
-        a.addEventListener('click', () => navLinks.classList.remove('open'))
+        a.addEventListener('click', () => toggleMenu(false))
       );
+    }
+    if (navOverlay) {
+      navOverlay.addEventListener('click', () => toggleMenu(false));
     }
   </script>
 </body>

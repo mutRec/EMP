@@ -16,11 +16,19 @@ const NIVELL_LABELS = {
 // ---------------------------------------------------------------
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
+const navOverlay = document.getElementById('navOverlay');
+
+function toggleMenu(open) {
+  const isOpen = open !== undefined ? open : !navLinks.classList.contains('open');
+  navLinks.classList.toggle('open', isOpen);
+  if (navOverlay) navOverlay.classList.toggle('show', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+
 if (navToggle && navLinks) {
-  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-  document.getElementById('navOverlay').classList.toggle('show');
+  navToggle.addEventListener('click', () => toggleMenu());
   navLinks.querySelectorAll('a').forEach((a) =>
-    a.addEventListener('click', () => navLinks.classList.remove('open'))
+    a.addEventListener('click', () => toggleMenu(false))
   );
 }
 
@@ -139,7 +147,6 @@ if (form) {
   });
 }
 
-document.getElementById('navOverlay').addEventListener('click', () => {
-  document.querySelector('.nav-links').classList.remove('open');
-  document.getElementById('navOverlay').classList.remove('show');
-});
+if (navOverlay) {
+  navOverlay.addEventListener('click', () => toggleMenu(false));
+}
