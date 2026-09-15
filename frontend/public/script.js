@@ -18,6 +18,7 @@ const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 if (navToggle && navLinks) {
   navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  document.getElementById('navOverlay').classList.toggle('show');
   navLinks.querySelectorAll('a').forEach((a) =>
     a.addEventListener('click', () => navLinks.classList.remove('open'))
   );
@@ -137,3 +138,8 @@ if (form) {
     }
   });
 }
+
+document.getElementById('navOverlay').addEventListener('click', () => {
+  document.querySelector('.nav-links').classList.remove('open');
+  document.getElementById('navOverlay').classList.remove('show');
+});
