@@ -168,7 +168,6 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
   flex-shrink: 0;
 }
 
-/* Quadrat EMP */
 .brand-logo-text {
   display: inline-flex;
   align-items: center;
@@ -185,7 +184,6 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
   border-radius: 4px;
 }
 
-/* Text "Escola de Musica del Palau" */
 .brand-name {
   color: #fff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -213,7 +211,6 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
   text-transform: uppercase;
 }
 
-/* Nav links (escriptori) */
 .nav-links {
   display: flex;
   align-items: center;
@@ -245,7 +242,6 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
 }
 .nav-links a.cta:hover { background: var(--color-accent-dark); }
 
-/* Botó hamburguesa */
 .nav-toggle {
   display: none;
   background: none;
@@ -264,7 +260,6 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
   transition: 0.2s;
 }
 
-/* ---------- Menú lateral (drawer) en mòbil ---------- */
 .nav-overlay {
   position: fixed;
   inset: 0;
@@ -278,74 +273,6 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
 .nav-overlay.show {
   opacity: 1;
   pointer-events: auto;
-}
-
-/* Tauleta — marca mes compacta, links mes estrets */
-@media (max-width: 1060px) {
-  .brand-name { font-size: 1.4rem; }
-  .nav-links { gap: 2px; }
-  .nav-links a { padding: 8px 10px; font-size: 0.85rem; }
-}
-
-@media (max-width: 860px) {
-  .site-header {
-    position: relative;
-    z-index: auto;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-  }
-
-  .nav-toggle { display: block; }
-
-  .nav-links {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 85%;
-    max-width: 350px;
-    background: var(--color-bg-alt);
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-    padding: 90px 28px 60px;
-    gap: 4px;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    box-shadow: var(--shadow-lg);
-    z-index: 101;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-border) transparent;
-  }
-
-  .nav-links::-webkit-scrollbar { width: 4px; }
-  .nav-links::-webkit-scrollbar-track { background: transparent; }
-  .nav-links::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 4px; }
-
-  .nav-links.open {
-    transform: translateX(0);
-  }
-
-  .nav-links a {
-    width: 100%;
-    text-align: left;
-    padding: 14px 18px;
-    font-size: 1.05rem;
-    border-radius: var(--radius);
-    color: var(--color-ink);
-  }
-
-  .nav-links a:hover {
-    background: var(--color-primary-soft);
-    color: var(--color-primary);
-  }
-
-  .nav-links a.cta {
-    margin-left: 0;
-    margin-top: 0;
-  }
 }
 
 /* ---------- Hero ---------- */
@@ -374,15 +301,6 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
   grid-template-columns: 1.15fr 0.85fr;
   gap: 48px;
   align-items: center;
-}
-
-@media (max-width: 860px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .hero-actions { justify-content: center; }
-  .hero-badges { justify-content: center; }
 }
 
 .hero .eyebrow { color: var(--color-gold); }
@@ -465,9 +383,6 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
   gap: 18px;
 }
 
-@media (max-width: 980px) { .niv-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .niv-grid { grid-template-columns: 1fr; } }
-
 .niv-card {
   background: var(--color-bg-alt);
   border: 1px solid var(--color-border);
@@ -530,8 +445,6 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
   gap: 20px;
 }
 
-@media (max-width: 780px) { .info-grid { grid-template-columns: 1fr; } }
-
 .info-card {
   background: var(--color-bg-alt);
   border: 1px solid var(--color-border);
@@ -552,10 +465,6 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--color-border);
-}
-
-@media (max-width: 900px) {
-  .matricula-panel { grid-template-columns: 1fr; }
 }
 
 .matricula-side {
@@ -593,23 +502,11 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
   padding: 44px 38px;
 }
 
-/* 🔧 RESPONSIVE MÒBIL — formulari de matrícula */
-@media (max-width: 600px) {
-  .matricula-side,
-  .matricula-form {
-    padding: 28px 20px;
-  }
-
-  .matricula-side h2 { font-size: 1.3rem; }
-}
-
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px 18px;
 }
-
-@media (max-width: 560px) { .form-grid { grid-template-columns: 1fr; } }
 
 .form-field {
   display: flex;
@@ -674,8 +571,6 @@ textarea { resize: vertical; min-height: 80px; }
   gap: 20px;
 }
 
-@media (max-width: 780px) { .contact-grid { grid-template-columns: 1fr; } }
-
 .contact-card {
   text-align: center;
   padding: 28px 20px;
@@ -733,29 +628,116 @@ textarea { resize: vertical; min-height: 80px; }
 .footer-bottom a.admin-link:hover { color: #fff; }
 
 /* ==========================================================================
-   RESPONSIVE GENERAL — ajustos mòbil
+   RESPONSIVE — Tots els ajustos mòbil i tauleta
    ========================================================================== */
 
-/* 🔧 Header en mòbil: Logo maximitzat */
-@media (max-width: 600px) {
-  .brand-logo-text {
-    width: 52px;
-    height: 52px;
+/* ---------- Tauleta (≤1060px) ---------- */
+@media (max-width: 1060px) {
+  .brand-name { font-size: 1.4rem; }
+  .nav-links { gap: 2px; }
+  .nav-links a { padding: 8px 10px; font-size: 0.85rem; }
+}
+
+/* ---------- Mòbil gran i tauleta petita (≤980px) ---------- */
+@media (max-width: 980px) {
+  .niv-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---------- Mòbil (≤900px) ---------- */
+@media (max-width: 900px) {
+  .matricula-panel { grid-template-columns: 1fr; }
+}
+
+/* ---------- Mòbil (≤860px) - Menú hamburguesa ---------- */
+@media (max-width: 860px) {
+  .site-header {
+    position: relative;
+    z-index: auto;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .nav-toggle { display: block; }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 85%;
+    max-width: 350px;
+    background: var(--color-bg-alt);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 90px 28px 60px;
+    gap: 4px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: var(--shadow-lg);
+    z-index: 101;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) transparent;
+  }
+
+  .nav-links::-webkit-scrollbar { width: 4px; }
+  .nav-links::-webkit-scrollbar-track { background: transparent; }
+  .nav-links::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 4px; }
+
+  .nav-links.open { transform: translateX(0); }
+
+  .nav-links a {
+    width: 100%;
+    text-align: left;
+    padding: 14px 18px;
     font-size: 1.05rem;
+    border-radius: var(--radius);
+    color: var(--color-ink);
+  }
+
+  .nav-links a:hover {
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+  }
+
+  .nav-links a.cta { margin-left: 0; margin-top: 0; }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-actions { justify-content: center; }
+  .hero-badges { justify-content: center; }
+}
+
+/* ---------- Mòbil (≤780px) ---------- */
+@media (max-width: 780px) {
+  .info-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Mòbil (≤600px) - Ajustos logo i general ---------- */
+@media (max-width: 600px) {
+  /* 🔧 Logo més petit i text més reduït per no enganxar-se al menú */
+  .brand-logo-text {
+    width: 38px;
+    height: 38px;
+    font-size: 0.75rem;
   }
 
   .brand-name {
-    font-size: 1.5rem;
-    line-height: 1.15;
+    font-size: 1.15rem;
+    line-height: 1.2;
   }
 
   .brand {
-    gap: 0.7rem;
+    gap: 0.5rem;
   }
-}
 
-/* 🔧 Section-head en mòbil: evitar que el text es talli */
-@media (max-width: 600px) {
+  /* 🔧 Seccions més compactes */
   .section { padding: 52px 0; }
 
   .section-head {
@@ -768,22 +750,29 @@ textarea { resize: vertical; min-height: 80px; }
     word-wrap: break-word;
   }
 
-  .section-head p {
-    font-size: 0.95rem;
+  .section-head p { font-size: 0.95rem; }
+
+  /* 🔧 Hero més compacte */
+  .hero { padding: 64px 0 72px; }
+  .hero h1 { font-size: 2rem; }
+  .hero p.lead { font-size: 0.98rem; }
+  .hero-badges { gap: 18px; }
+  .hero-card { padding: 22px; }
+
+  /* 🔧 Formulari matrícula més compacte */
+  .matricula-side,
+  .matricula-form {
+    padding: 28px 20px;
   }
+
+  .matricula-side h2 { font-size: 1.3rem; }
 }
 
-/* 🔧 Hero en mòbil */
-@media (max-width: 600px) {
-  .hero { padding: 64px 0 72px; }
-
-  .hero h1 { font-size: 2rem; }
-
-  .hero p.lead { font-size: 0.98rem; }
-
-  .hero-badges { gap: 18px; }
-
-  .hero-card { padding: 22px; }
+/* ---------- Mòbil petit (≤560px) ---------- */
+@media (max-width: 560px) {
+  .niv-grid { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ==========================================================================
@@ -795,7 +784,6 @@ textarea { resize: vertical; min-height: 80px; }
   min-height: 100vh;
 }
 
-/* Login */
 .login-wrap {
   min-height: 100vh;
   display: flex;
@@ -839,7 +827,6 @@ textarea { resize: vertical; min-height: 80px; }
   color: var(--color-ink-soft);
 }
 
-/* Admin shell */
 .admin-topbar {
   background: var(--color-primary);
   color: #fff;
@@ -887,15 +874,11 @@ textarea { resize: vertical; min-height: 80px; }
 
 .admin-section-head h2 { font-size: 1.3rem; margin: 0; }
 
-/* Stats */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 14px;
 }
-
-@media (max-width: 980px) { .stats-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 560px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
 
 .stat-card {
   background: #fff;
@@ -919,7 +902,6 @@ textarea { resize: vertical; min-height: 80px; }
   margin-top: 4px;
 }
 
-/* Filters */
 .filters-bar {
   display: flex;
   gap: 10px;
@@ -944,7 +926,6 @@ textarea { resize: vertical; min-height: 80px; }
   min-width: 180px;
 }
 
-/* Table */
 .table-wrap {
   background: #fff;
   border: 1px solid var(--color-border);
@@ -1014,7 +995,6 @@ select.estat-select {
   border-radius: var(--radius-sm);
 }
 
-/* Modal */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -1111,7 +1091,6 @@ select.estat-select {
 .breadcrumb span { margin: 0 6px; }
 .breadcrumb span:last-child { color: var(--color-ink); }
 
-/* Page Hero */
 .page-hero {
   background: linear-gradient(135deg, var(--color-primary) 0%, #16292b 100%);
   color: #fff;
@@ -1134,7 +1113,6 @@ select.estat-select {
 
 .page-hero .edat { color: var(--color-gold); }
 
-/* Page Layout: Main + Sidebar */
 .page-content {
   display: grid;
   grid-template-columns: 1fr 320px;
@@ -1158,7 +1136,6 @@ select.estat-select {
   margin-top: 1em;
 }
 
-/* Sidebar */
 .page-sidebar { position: sticky; top: 80px; }
 
 .sidebar-card {
@@ -1192,7 +1169,6 @@ select.estat-select {
 
 .page-hero .btn { margin-top: 24px; }
 
-/* Timeline */
 .timeline {
   position: relative;
   padding-left: 28px;
@@ -1226,7 +1202,6 @@ select.estat-select {
 .timeline-content h3 { font-size: 1rem; margin-bottom: 4px; }
 .timeline-content p { font-size: 0.9rem; margin: 0; }
 
-/* Horaris */
 .horari-table { overflow-x: auto; margin: 20px 0; }
 
 .horari-table table {
@@ -1250,7 +1225,6 @@ select.estat-select {
 
 .horari-table td:first-child { text-align: left; }
 
-/* Info box */
 .info-box {
   background: var(--color-primary-soft);
   border-left: 4px solid var(--color-primary);
@@ -1267,7 +1241,6 @@ select.estat-select {
   border-left-color: var(--color-warn-text);
 }
 
-/* Ajuts cards */
 .ajut-card {
   background: var(--color-bg-alt);
   border: 1px solid var(--color-border);
@@ -1279,7 +1252,6 @@ select.estat-select {
 .ajut-card h3 { font-size: 1.05rem; margin-bottom: 10px; }
 .ajut-card ul { margin-top: 10px; }
 
-/* Enllaços a les targetes */
 .niv-card--link, .info-card--link {
   display: block;
   text-decoration: none;
