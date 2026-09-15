@@ -203,7 +203,7 @@ p {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 100;
   background: linear-gradient(135deg, rgba(31, 58, 61, 0.88), rgba(22, 41, 43, 0.92));
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -973,6 +973,11 @@ textarea {
   .matricula-side h2 {
     font-size: 1.3rem;
   }
+
+  /* Filters admin apilats en mòbil */
+  .filters-bar {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---------- Mòbil petit (≤560px) ---------- */
@@ -1148,9 +1153,9 @@ textarea {
 }
 
 .filters-bar {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
   gap: 10px;
-  flex-wrap: wrap;
   background: #fff;
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
@@ -1164,11 +1169,11 @@ textarea {
   border-radius: var(--radius-sm);
   border: 1.5px solid var(--color-border);
   font-size: 0.87rem;
+  width: 100%;
 }
 
 .filters-bar input[type="search"] {
-  flex: 1;
-  min-width: 180px;
+  min-width: 0;
 }
 
 .table-wrap {
